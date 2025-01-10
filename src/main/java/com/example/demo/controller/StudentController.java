@@ -61,9 +61,10 @@ public class StudentController {
 
         if (student != null) {
             studentRepository.deleteById(id);
+            return ResponseEntity.ok(StudentDto.toDto(student));
+        } else {
+            return ResponseEntity.noContent().build();
         }
-
-        return ResponseEntity.ok(StudentDto.toDto(student));
     }
 
 }
