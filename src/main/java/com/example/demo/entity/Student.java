@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import com.example.demo.dto.StudentDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,4 +14,13 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "s_id")
     Long id;
+
+    @Column(name = "s_name")
+    String name;
+
+    public static Student toEntity(StudentDto studentDto) {
+        Student student = new Student();
+        student.setName(studentDto.getName());
+        return student;
+    }
 }
