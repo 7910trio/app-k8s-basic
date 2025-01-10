@@ -2,7 +2,7 @@ name: k8s-test-with-ci
 
 on:
   push:
-    branches: master
+    branches: main
 
 
 jobs:
