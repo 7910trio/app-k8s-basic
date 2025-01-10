@@ -1,8 +1,10 @@
 name: k8s-test-with-ci
 
 on:
-  push:
-    branches: main
+  workflow_dispatch
+  
+  #push:
+   # branches: main
 
 
 jobs:
